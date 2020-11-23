@@ -1,6 +1,4 @@
 import React, { useEffect } from 'react';
-import GridList from '@material-ui/core/GridList';
-import GridListTile from '@material-ui/core/GridListTile';
 import PropTypes from "prop-types";
 import Movie from '../Movie';
 import Grid from "@material-ui/core/Grid";
