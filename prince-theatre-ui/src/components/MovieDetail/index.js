@@ -22,7 +22,6 @@ const MovieDetail = (props) => {
 
  const bestPrice = getBestPrice(Prices);
 
-
   return (
     <MovieDetailContainer>
       <ButtonWrapper>

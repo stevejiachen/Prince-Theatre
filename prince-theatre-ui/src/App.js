@@ -4,7 +4,6 @@ import MovieList from "./containers/MoviesList";
 import MovieDetail from "./containers/MovieDetail";
 
 function App() {
-
   return (
     <div className="App">
       <h1>Prince's Theatre</h1>

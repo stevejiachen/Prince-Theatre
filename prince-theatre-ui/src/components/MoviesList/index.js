@@ -3,15 +3,12 @@ import PropTypes from "prop-types";
 import Movie from '../Movie';
 import Grid from "@material-ui/core/Grid";
 
-function MovieList(props) {
+const MovieList = (props) => {
+  const { movies, getMoviesList } = props;
 
   useEffect(() => {
-    const { getMoviesList} = props;
     getMoviesList();
-
   }, []);
-
-  const { movies } = props;
 
   return (
     <div>
@@ -24,9 +21,6 @@ function MovieList(props) {
       </Grid>
     </div>
   );
-}
-
-MovieList.defaultProps = {
 };
 
 MovieList.propTypes = {

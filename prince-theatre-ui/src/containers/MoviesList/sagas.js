@@ -6,7 +6,6 @@ import {getMoviesListFail, getMoviesListSuccess} from "./actions";
 const apiEndpoint = process.env.REACT_APP_API_ENDPOINT;
 
 function* getMoviesListHandler({ provider }) {
-
   try {
     const { data } = yield retry(3, 500 , () => axios.get(`${apiEndpoint}/movies`));
     yield put(getMoviesListSuccess(data))
@@ -15,7 +14,6 @@ function* getMoviesListHandler({ provider }) {
     yield put(getMoviesListFail());
   }
 }
-
 
 function* movieListSagas() {
   yield takeLatest(GET_MOVIES_LIST, getMoviesListHandler);

@@ -7,8 +7,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
 import CardActionArea from '@material-ui/core/CardActionArea';
 
-function Movie(props) {
-
+const Movie = (props) => {
   const { ID, Poster, Title } = props;
 
   return (
@@ -39,7 +38,6 @@ const MovieTitle = styled.p`
   overflow: hidden;
   text-overflow: ellipsis;
 `;
-
 
 Movie.propTypes = {
   ID: PropTypes.string.isRequired,

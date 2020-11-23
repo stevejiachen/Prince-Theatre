@@ -19,7 +19,6 @@ function* getMovieDetailHandler({ id }) {
   }
 }
 
-
 function* movieDetailSagas() {
   yield takeLatest(GET_MOVIE_DETAIL, getMovieDetailHandler);
 }
