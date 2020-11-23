@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Button from "@material-ui/core/Button";
 import {Link} from "react-router-dom";
 import PropTypes from "prop-types";
+import ErrorAlert from "../ErrorAlert";
 
 const getBestPrice = (prices) => {
   if (prices.length < 1) {
@@ -12,11 +13,12 @@ const getBestPrice = (prices) => {
 };
 
 const MovieDetail = (props) => {
-  const { Title, Prices, Poster, location } = props;
+  const { Title, Prices, Poster, location, getMovieDetail, error } = props;
+
+  const movieId = location.pathname.substr(1);
 
   useEffect(() => {
-    const { getMovieDetail} = props;
-    getMovieDetail(location.pathname.substr(1));
+    getMovieDetail(movieId);
 
   }, []);
 
@@ -24,6 +26,9 @@ const MovieDetail = (props) => {
 
   return (
     <MovieDetailContainer>
+      {
+        error &&  <ErrorAlert callback={() => getMovieDetail(movieId)} errorMessage={'Something wrong happens, please try again'}/>
+      }
       <ButtonWrapper>
         <Link to='/'>
           <Button

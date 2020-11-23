@@ -13,6 +13,7 @@ export default function moviesList(state = initialState, action) {
       return state.set('loading', true);
     case GET_MOVIES_LIST_SUCCESS:
       return state.set('loading', false)
+                  .set('error', false)
                   .set('movies', fromJS(action.data));
     case GET_MOVIES_LIST_FAIL:
       return state.set('loading', false)

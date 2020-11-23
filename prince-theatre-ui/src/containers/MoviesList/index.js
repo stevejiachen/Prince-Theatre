@@ -4,7 +4,9 @@ import MoviesList from '../../components/MoviesList';
 import { getMoviesList } from './actions';
 
 const mapStateToProps = (state) => ({
-  movies: state.moviesList.get('movies').toJS()
+  movies: state.moviesList.get('movies').toJS(),
+  loading: state.moviesList.get('loading'),
+  error: state.moviesList.get('error'),
 });
 
 const mapDispatchToProps = { getMoviesList };

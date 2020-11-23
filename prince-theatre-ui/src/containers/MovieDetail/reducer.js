@@ -14,10 +14,10 @@ export default function movieDetail(state = initialState, action) {
     case GET_MOVIE_DETAIL:
       return state.set('loading', true);
     case GET_MOVIE_DETAIL_SUCCESS:
-      return fromJS({...action.data, loading: false});
+      return fromJS({...action.data, loading: false, error: false});
     case GET_MOVIE_DETAIL_FAIL:
       return state.set('loading', false)
-                  .set('loading', false);
+                  .set('error', true);
     default:
       return state;
   }

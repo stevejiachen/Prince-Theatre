@@ -6,7 +6,9 @@ import { getMovieDetail } from './actions';
 const mapStateToProps = (state) => ({
   Title: state.movieDetail.get('Title'),
   Prices: state.movieDetail.get('Prices').toJS(),
-  Poster: state.movieDetail.get('Poster')
+  Poster: state.movieDetail.get('Poster'),
+  loading: state.movieDetail.get('loading'),
+  error: state.movieDetail.get('error'),
 });
 
 const mapDispatchToProps = { getMovieDetail };
