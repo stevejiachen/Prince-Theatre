@@ -22,12 +22,17 @@ class MovieController {
        console.error(e)
      }
 
-    const moviesList = lodash.unionBy(this.fwMovies, this.cwMovies, 'Title').map((movie) => ({
-      ...movie,
-      ID: movie.ID.substr(2)
-    }));
+     if (this.fwMovies.length || this.cwMovies.length) {
+       const moviesList = lodash.unionBy(this.fwMovies, this.cwMovies, 'Title').map((movie) => ({
+         ...movie,
+         ID: movie.ID.substr(2)
+       }));
+       res.send(moviesList)
+     } else {
+       res.status(502);
+       res.send('something went wrong, please try later')
+     }
 
-    res.send(moviesList)
   }
 
   async getMovieDetail(req, res) {

@@ -34,7 +34,8 @@ clone the repo and cd to the root directory
 Solution:
 1. simple react-router setup for movie list and movie detail pages
 2. using redux for state management and redux-saga for side effect
-3. using Material-UI for polishing(saving a bit styling time)
+3. frontend retry when error occurs
+4. using Material-UI for polishing(saving a bit styling time)
 
 
 
@@ -58,8 +59,6 @@ movie ids are same for both of the providers after removing the prefix 'cw' and 
 
 ### trade-offs
 1. Due to time limit, there isn't much unit/e2e test available for the code challenge
-2. Frontend could also add a retry(auto & manual) when error occurs
-3. Some caching could add to backend(eg Redis) for movie catalogue or movie detail if price not changing frequently
-4. error handling for frontend
-5. make the UI more visual attractive
-6. prop-types checking for frontend
+2. Some caching could add to backend(eg Redis) for movie catalogue or movie detail if price not changing frequently
+3. more interactive error handling for frontend
+4. make the UI visual attractive
