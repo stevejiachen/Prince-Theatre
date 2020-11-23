@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import {Link} from "react-router-dom";
 import Card from '@material-ui/core/Card';
@@ -41,6 +42,9 @@ const MovieTitle = styled.p`
 
 
 Movie.propTypes = {
+  ID: PropTypes.string.isRequired,
+  Poster:  PropTypes.string.isRequired,
+  Title:  PropTypes.string.isRequired
 };
 
 export default Movie;

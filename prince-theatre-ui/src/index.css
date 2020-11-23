@@ -14,5 +14,9 @@ code {
 
 .App {
   text-align: center;
-  padding: 10px;
+  padding: 0 50px;
+}
+
+.h1 {
+  font-family: cursive;
 }

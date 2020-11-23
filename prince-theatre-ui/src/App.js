@@ -12,18 +12,12 @@ function App() {
         <Route path={'/'} exact>
           <MovieList />
         </Route>
-        <Route path="/:movie">
+        <Route path="/:movieID">
           <MovieDetail/>
         </Route>
       </Switch>
     </div>
   );
 }
-
-App.defaultProps = {
-};
-
-App.propTypes = {
-};
 
 export default App;

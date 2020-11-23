@@ -1,7 +1,9 @@
 import React, { useEffect } from 'react';
 import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
+import PropTypes from "prop-types";
 import Movie from '../Movie';
+import Grid from "@material-ui/core/Grid";
 
 function MovieList(props) {
 
@@ -15,15 +17,13 @@ function MovieList(props) {
 
   return (
     <div>
-      <h2>Classic Movies At Home</h2>
-
-      <GridList cellHeight={300} cols={4} spacing={10}>
+      <Grid container spacing={3} >
         {movies.map((movie) => (
-          <GridListTile  key={movie.ID} cols={1}>
+          <Grid  item key={movie.ID} xs={12} sm={12} md={6} lg={3}>
             <Movie {...movie}/>
-          </GridListTile>
+          </Grid>
         ))}
-      </GridList>
+      </Grid>
     </div>
   );
 }
@@ -32,6 +32,8 @@ MovieList.defaultProps = {
 };
 
 MovieList.propTypes = {
+  getMoviesList: PropTypes.func.isRequired,
+  movies: PropTypes.arrayOf(PropTypes.shape({})),
 };
 
 export default MovieList;
